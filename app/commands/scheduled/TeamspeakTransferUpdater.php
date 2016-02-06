@@ -94,9 +94,7 @@ class TeamspeakTransferUpdater extends ScheduledCommand
     {
         // Log what we are going to do in the laravel.log file
         \Log::info('Started command ' . $this->name, array('src' => __CLASS__));
-
         // Call the addToQueue helper to add a new update job.
         \App\Services\Queue\QueueHelper::addToQueue('\Seat\EveQueues\Full\TeamspeakTransfer', '0', NULL, 'Teamspeak', 'Eve');
-        \Log::info('Started command ' . $this->name, array('src' => __CLASS__));
     }
 }
